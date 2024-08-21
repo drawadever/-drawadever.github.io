@@ -1,0 +1,68 @@
+/* 전반적인 페이지 스타일 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f3f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    height: auto;
+    overflow: auto;
+}
+
+/* 컨테이너 스타일 */
+.container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    margin: 20px;
+}
+
+/* 헤딩 스타일 */
+h1 {
+    text-align: center;
+    color: #37352f;
+    font-size: 32px;
+}
+
+/* 파일 입력 스타일 */
+input[type="file"] {
+    display: block;
+    font-size: 14px;
+}
+
+/* 오디오 플레이어 스타일 */
+audio {
+    display: block;
+    margin: 20px auto;
+    width: 100%;
+}
+
+/* 변환된 텍스트 스타일 */
+#subtitle {
+    margin-top: 20px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    line-height: 1.5;
+    color: #37352f;
+    font-size: 16px;
+}
+
+/* 단어 기본 스타일 */
+#subtitle span {
+    margin-right: 5px; /* 단어 간 간격 유지 */
+}
+
+/* 텍스트의 단어 호버 시 스타일 */
+#subtitle span:hover {
+    background-color: #ededed;
+    padding: 2px;
+    margin: -2px 3px -2px -2px;
+    border-radius: 4px;
+    cursor: pointer;
+}
