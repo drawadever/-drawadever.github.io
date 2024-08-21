@@ -1,0 +1,684 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Haven English</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 237, 214, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 237, 214, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(249, 228, 188, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="6dfee51e-5676-427c-9540-1fa38d648b0f" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="Haven%20English%206dfee51e5676427c95401fa38d648b0f/%25E1%2584%2592%25E1%2585%25A2%25E1%2584%258B%25E1%2585%25B5%25E1%2584%2587%25E1%2585%25B3%25E1%2586%25AB-%25E1%2584%2585%25E1%2585%25A9%25E1%2584%2580%25E1%2585%25A9-big.png"/></div><h1 class="page-title">Haven English</h1><p class="page-description"></p></header><div class="page-body"><h1 id="a85f0192-5bab-4500-afff-139323331034" class="">👋<br/><br/><strong>안녕하세요, Haven 선생님입니다!</strong></h1><hr id="83951d46-f4c2-4605-b06b-4be6530c967c"/><div id="e1d301c6-b7a3-4619-9561-1c3cbbcedb28" class="column-list"><div id="344de3ab-a786-4190-8a15-feaddc76abbd" style="width:25%" class="column"><p id="2516499a-3850-42e9-81ea-8edd47c9337e" class="block-color-gray"><strong>INTRODUCTION<br/><br/></strong>인사말</p></div><div id="de19d09f-2773-474d-9632-63ab8e38bf5c" style="width:75%" class="column"><p id="d8e61b3c-acf2-490a-afb3-b6b78f3e1ca1" class="">성인이 된 이 후에 회화 공부를 시작해 현재는 교포로 오해도 종종 받을 정도로 영어 실력을 키웠습니다. 올해 치른 토익 시험에서는 990점 만점에 980점을 받았고, OPIc 시험에서는 가장 높은 레벨인 &quot;Advaced Low&quot;를 받았습니다. 제가 영어로 한마디도 제대로 못 뱉었을 시절에 저와 같은 고민을 하고 있을 분들을 위해 영어 비대면 과외를 진행하고 있어요.</p><p id="81c121c6-2349-4634-a626-d09dcd594d3c" class="">💬</p><p id="3238a9db-c26d-4458-b700-b9e0b264a866" class="">대학교 3학년 시절, 한 외국인 학생과의 팀 프로젝트에서 영어로 한 마디도 제대로 하지 못하는 제 모습을 발견하고 큰 충격을 받았어요. 그 충격을 원동력 삼아 다음 학기 휴학계를 내고 1년간 영어 회화 공부에 전념했고 단기간 안에 영어 실력을 크게 향상시킬 수 있었습니다. 단순한 충격과 수치심에 시작한 영어 회화 공부는 결과적으로 제 세상을 넓혀 주었고 인생의 관점을 완전히 바꿔 주었어요. 여러분도 저와 같은 경험을 꼭 해보셨으면 해요. 물론 제가 옆에서 도와 드릴게요.</p></div></div><hr id="85a577c3-484e-4dfb-a23a-d00dac31359d"/><div id="ece74a17-9c7b-463a-a333-2070dfc6e6db" class="column-list"><div id="3be503b5-694e-4b3d-a1f8-daef9ecd9b66" style="width:25%" class="column"><p id="87dc8be3-6d6a-425c-81c7-cfd39b7fdd39" class="block-color-default"><mark class="highlight-gray"><strong>EXPERIENCE<br/><br/></strong></mark><mark class="highlight-gray">약력</mark></p></div><div id="fb767787-6b2d-42c4-a352-f27041a292a1" style="width:75%" class="column"><ul id="7271c866-133e-47f9-aef0-10cb4d04f6d5" class="block-color-default bulleted-list"><li style="list-style-type:circle"><mark class="highlight-gray">2021</mark>  <strong>고려대학교 산업디자인과 졸업</strong></li></ul><ul id="0efcaeb5-2bf3-4fae-8d5a-8a34e53dc5f4" class="block-color-default bulleted-list"><li style="list-style-type:circle"><mark class="highlight-gray">2016-2021</mark>  <strong>수능 영어 과외 진행</strong></li></ul><ul id="65c164b5-4ef4-4585-b240-e6b1c0d66c08" class="block-color-default bulleted-list"><li style="list-style-type:circle"><mark class="highlight-gray">2018-2019</mark>  <strong>미국 배낭여행</strong> (5개월)</li></ul><ul id="76e6babc-c11b-439c-895b-510d6e0b52f9" class="block-color-default bulleted-list"><li style="list-style-type:circle"><mark class="highlight-gray">2022-2024</mark>  <strong>호주 워킹 홀리데이</strong> (2년)</li></ul></div></div><hr id="23d51fa3-3416-44f6-a19a-1a98584eb571"/><div id="0e6e596e-16c8-4d1b-abfe-fa324a19b951" class="column-list"><div id="10904cf1-15a6-40a4-9e08-af9f0cad2113" style="width:29.090909090909093%" class="column"><p id="6485d033-a339-4e41-9685-2d6102fd23c9" class="block-color-default"><mark class="highlight-gray"><strong>CERTIFICATE<br/><br/></strong></mark><mark class="highlight-gray">증명서</mark></p></div><div id="05ca005d-8402-42fd-a3b6-62f522a44446" style="width:17.5%" class="column"><figure id="7cb82a4a-4246-4dec-9614-1beaa7612176" class="image"><a href="Haven%20English%206dfee51e5676427c95401fa38d648b0f/1.png"><img style="width:1000px" src="Haven%20English%206dfee51e5676427c95401fa38d648b0f/1.png"/></a></figure></div><div id="e22ae5dd-9d88-4b6e-a653-811740a18113" style="width:17.5%" class="column"><figure id="e0cdb7a8-f279-4574-ac31-98735215bf00" class="image"><a href="Haven%20English%206dfee51e5676427c95401fa38d648b0f/2.png"><img style="width:1000px" src="Haven%20English%206dfee51e5676427c95401fa38d648b0f/2.png"/></a></figure></div><div id="16d64745-bbde-4685-a4d3-c75d0b664c27" style="width:17.5%" class="column"><figure id="adee303d-b25f-4936-b242-5f3865b8323d" class="image"><a href="Haven%20English%206dfee51e5676427c95401fa38d648b0f/3.png"><img style="width:1000px" src="Haven%20English%206dfee51e5676427c95401fa38d648b0f/3.png"/></a></figure></div><div id="4d4edd5d-58b8-462d-a78d-35dde6a6d67a" style="width:18.40909090909092%" class="column"><figure id="a9e89b3b-edb0-4a6c-a897-6257a36fc2b0" class="image"><a href="Haven%20English%206dfee51e5676427c95401fa38d648b0f/4.png"><img style="width:1000px" src="Haven%20English%206dfee51e5676427c95401fa38d648b0f/4.png"/></a></figure></div></div><h1 id="0a1c6992-e11d-4933-a13b-5da7726c7af0" class="">📌<br/>저희 수업 특징이에요.<br/></h1><hr id="5b406a5e-1cbc-48c9-bc9f-a87aede8c4a8"/><div id="123533b1-f0b4-4cab-81be-85e8a0f4cf3f" class="column-list"><div id="a94288e0-22b4-43a9-b544-6698db672b67" style="width:50.000000000000014%" class="column"><h2 id="2d374315-4536-4ae2-9d0f-ec2f41836cfe" class="">해빗트래커를 활용하여 매일매일<br/>영어하는 습관을 길러드려요<br/></h2><p id="e15f9f74-e184-4cb0-9c17-1d909285b4b9" class="">영어는 근육과 같아서 꾸준히 해주면 실력이 커지지만 멈추면 금새 실력이 줄어들어요. 해빗트래커를 통해 차근차근 영어하는 습관을 길러보세요.</p></div><div id="0c00b6ab-0338-45fe-b4fa-064add4935e9" style="width:50%" class="column"><figure id="f065621d-1caa-43d3-98f4-c43419424a85" class="image"><a href="Haven%20English%206dfee51e5676427c95401fa38d648b0f/1%201.png"><img style="width:751px" src="Haven%20English%206dfee51e5676427c95401fa38d648b0f/1%201.png"/></a></figure></div></div><div id="94ea003b-8636-413f-9488-199e01968839" class="column-list"><div id="e4a29d63-3257-4abf-9150-bd68f8f9afbf" style="width:50.00000000000002%" class="column"><h2 id="86b5b42d-ffc6-41fd-a3a3-49d230449da5" class="">매주 자체제작한 풍부한 수업자료를<br/>통해 똑똑하게 공부해요<br/></h2><p id="70f7510c-f667-4003-81c6-dec04a419b0d" class="">Notion, chat GPT, Quizlet, Language Reactor 등 다양한 프로그램을 똑똑하게 활용해서 영어공부하는 법을 알게되실 거예요.</p></div><div id="66f07a4a-9c74-4ac0-823e-c80305b44e0a" style="width:50%" class="column"><figure id="5bfeda03-b7cb-4aa3-9de8-deb309209dee" class="image"><a href="Haven%20English%206dfee51e5676427c95401fa38d648b0f/2%201.png"><img style="width:751px" src="Haven%20English%206dfee51e5676427c95401fa38d648b0f/2%201.png"/></a></figure></div></div><div id="43d2a9ea-bcc7-4574-83f2-4b5bcdc87302" class="column-list"><div id="dd07bd54-108e-4324-837f-9b71e455c161" style="width:50%" class="column"><h2 id="11a05540-cb78-419a-9b25-a542e53686cc" class="">수업 중에 영어로 대화한 내용을<br/>녹음하여 꼼꼼하게 교정해드려요<br/></h2><p id="cc3e1ed0-381c-4b12-ad0d-456a756cf2ed" class="">같은 표현을 어떻게 하면 좀 더 원어민스럽게 말할 수 있는지 배울 수 있어요. 첨부된 오디오 파일을 이용해서 쉐도잉도 해 보세요.</p></div><div id="f29bd381-5cf2-4f9b-afbf-c6c24443ebee" style="width:50.00000000000004%" class="column"><figure id="d60132b2-91b7-4ca1-af5e-18de97e48122" class="image"><a href="Haven%20English%206dfee51e5676427c95401fa38d648b0f/3%201.png"><img style="width:751px" src="Haven%20English%206dfee51e5676427c95401fa38d648b0f/3%201.png"/></a></figure></div></div><div id="d921bbde-bd18-4116-b831-6b006754ccb6" class="column-list"><div id="80adf741-c923-4e9d-9672-c2acf8224908" style="width:50%" class="column"><h2 id="865b1113-324f-48dc-8a71-b6d814a5ba51" class="">PC와 모바일 앱을 통해 어디서든<br/>편하게 열람할 수 있어요<br/></h2><p id="937c4ed7-10bb-4981-b9d7-bee8ad2b88f0" class="">모든 수업자료는 학생분 개인 페이지에 날짜별로 차곡차곡 정리돼요. 핸드폰에 Notion 앱을 설치하면 언제 어디서든 공부하고 복습할 수 있어요.</p></div><div id="771acd5f-f55b-4cc8-a5aa-e33de2f9267c" style="width:50%" class="column"><figure id="d8129064-34e4-46f9-81c6-99727d6a4def" class="image"><a href="Haven%20English%206dfee51e5676427c95401fa38d648b0f/4%201.png"><img style="width:751px" src="Haven%20English%206dfee51e5676427c95401fa38d648b0f/4%201.png"/></a></figure></div></div><div id="029bea09-a1db-42c0-96d9-f95b8948be9a" class="column-list"><div id="e6b61dbd-3e9b-4086-a338-6d75b94ccec9" style="width:50.000000000000014%" class="column"><h2 id="f14fb08b-da8a-4320-83ec-f43a33770e24" class="">이 수업을 떠나 혼자서도 즐겁게<br/>영어공부를 이어갈 수 있어요<br/></h2><p id="d25b59dd-86a9-463a-8a26-7d7a15777d71" class="">제 모든 꿀팁 들을 쏙쏙 흡수하면서 영어에 대한 즐거움을 알게 되실 거예요. 그 이 후로 부터 영어공부는 숨쉬듯 자연스러워질 거랍니다.</p></div><div id="93f56828-8346-4f90-8c75-4b63ea09e478" style="width:50%" class="column"><figure id="6c360633-990e-4228-97f7-8ec15b5c96d5" class="image"><a href="Haven%20English%206dfee51e5676427c95401fa38d648b0f/5.png"><img style="width:751px" src="Haven%20English%206dfee51e5676427c95401fa38d648b0f/5.png"/></a></figure></div></div><h1 id="4ec00bec-9907-424b-80e0-23d64d0913b0" class="">📚<br/>원하는 강의를 선택하세요.<br/></h1><hr id="d18d56b9-001e-4eac-9b36-be36f864780c"/><h2 id="8e186cc6-5fa2-4627-b677-f9919f7190da" class="block-color-default"><strong>영어 초급자를 위한 여행 영어</strong></h2><p id="e56983fc-f2b8-4e12-a248-6ef988fc59fb" class="">매주 여행 상황별 필수표현 들을 학습해요. 대화 시나리오를 통해 실제 상황에서 해당 표현들이 어떻게 쓰이는지 감을 익힐 수 있어요. 제공되는 통합 오디오 파일을 통해 손쉽게 복습도 해보세요.</p><div id="c2430695-4377-43f3-af03-e457b5465f96" class="column-list"><div id="c8097862-0c1d-4afc-bb88-6e067921cabe" style="width:50%" class="column"><figure id="51030693-33eb-4ae9-bca4-2efa9387618e" class="image"><a href="Haven%20English%206dfee51e5676427c95401fa38d648b0f/1%202.png"><img style="width:1914px" src="Haven%20English%206dfee51e5676427c95401fa38d648b0f/1%202.png"/></a></figure></div><div id="436ee8c4-11ec-4120-8c34-ba844e94adbc" style="width:50%" class="column"><figure id="3900ef36-06ca-4102-ae73-a743531d0500" class="image"><a href="Haven%20English%206dfee51e5676427c95401fa38d648b0f/2%202.png"><img style="width:1914px" src="Haven%20English%206dfee51e5676427c95401fa38d648b0f/2%202.png"/></a></figure></div></div><div id="9ff6f4f0-b36e-40d3-ba1c-8698b3fa2eae" class="column-list"><div id="edc137fe-376f-4780-ad67-3de565b98fb4" style="width:50%" class="column"><figure id="7fee699d-f997-4536-8b40-926a662376b2" class="image"><a href="Haven%20English%206dfee51e5676427c95401fa38d648b0f/3%202.png"><img style="width:1914px" src="Haven%20English%206dfee51e5676427c95401fa38d648b0f/3%202.png"/></a></figure></div><div id="459ef749-83ec-49e4-9047-fd545b63003d" style="width:50%" class="column"><figure id="3242a8b8-bd9c-402a-849d-0b1f344428bd" class="image"><a href="Haven%20English%206dfee51e5676427c95401fa38d648b0f/4%202.png"><img style="width:1914px" src="Haven%20English%206dfee51e5676427c95401fa38d648b0f/4%202.png"/></a></figure></div></div><h2 id="855e5462-7f26-44e7-9afd-244bad8e3792" class="block-color-default"><strong>영어 중급자를 위한 회화 영어</strong></h2><p id="7d92d92f-2cdb-4d78-943c-23f90758c0e4" class="">흥미로운 주제의 유튜브와 기사를 가지고 대화를 나누고, 나눈 대화 내용을 꼼꼼하게 피드백 해드려요. 주제별 유용한 표현들도 맥락에 맞는 한글 뜻과 함께 일목요연하게 정리해서 제공해 드립니다.</p><div id="9eeb22b0-978e-48a7-90ac-2c6244f4966f" class="column-list"><div id="2afcb4e2-d2e3-4030-9a08-64cfd79f94b8" style="width:50%" class="column"><figure id="7d1df44b-91a0-4ec6-89aa-e2bd925fd409" class="image"><a href="Haven%20English%206dfee51e5676427c95401fa38d648b0f/1%203.png"><img style="width:1914px" src="Haven%20English%206dfee51e5676427c95401fa38d648b0f/1%203.png"/></a></figure></div><div id="bd957c27-ee7e-44c0-ae85-083543ac55d0" style="width:50%" class="column"><figure id="74288e29-0ee0-4966-9592-03f1c45e0dc5" class="image"><a href="Haven%20English%206dfee51e5676427c95401fa38d648b0f/2%203.png"><img style="width:1914px" src="Haven%20English%206dfee51e5676427c95401fa38d648b0f/2%203.png"/></a></figure></div></div><div id="2ac237a3-167a-40d9-be46-a73d27e6abca" class="column-list"><div id="a9e04e17-2df8-4f51-9839-8d4637a67085" style="width:50%" class="column"><figure id="640ef2c8-deaa-478f-9eca-7b6b47e7d95d" class="image"><a href="Haven%20English%206dfee51e5676427c95401fa38d648b0f/3%203.png"><img style="width:1914px" src="Haven%20English%206dfee51e5676427c95401fa38d648b0f/3%203.png"/></a></figure></div><div id="5cf2458c-f70a-4aa0-a4c9-5058a3577545" style="width:50%" class="column"><figure id="72064f61-3527-4a31-8ade-3eb0ab3dded3" class="image"><a href="Haven%20English%206dfee51e5676427c95401fa38d648b0f/4%203.png"><img style="width:653px" src="Haven%20English%206dfee51e5676427c95401fa38d648b0f/4%203.png"/></a></figure></div></div><h1 id="e44d514c-c5f9-4938-850c-b1600e69b533" class="block-color-default"><mark class="highlight-gray"><strong>🤙<br/><br/></strong></mark>더 자세한 내용은 편하게 상담 문의 주세요!</h1><hr id="173d9d0b-3b58-462d-9f84-aa005e005023"/><figure class="block-color-default callout" style="white-space:pre-wrap;display:flex" id="538dabf2-b6e3-4770-9ed9-915586e16389"><div style="font-size:1.5em"><span class="icon">✉️</span></div><div style="width:100%">drawadever@gmail.com</div></figure><figure class="block-color-default callout" style="white-space:pre-wrap;display:flex" id="07d216d2-e0d4-479a-87fa-15792fca7b6a"><div style="font-size:1.5em"><span class="icon">📞</span></div><div style="width:100%">01049674559</div></figure></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
